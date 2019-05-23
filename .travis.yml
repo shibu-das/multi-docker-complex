@@ -11,7 +11,7 @@ after_success:
     - docker build -t shibudas/complex-server ./server
     - docker build -t shibudas/complex-worker ./worker
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-    - docker push complex-client
-    - docker push complex-nginx
-    - docker push complex-server
-    - docker push complex-worker
+    - docker push shibudas/complex-client
+    - docker push shibudas/complex-nginx
+    - docker push shibudas/complex-server
+    - docker push shibudas/complex-worker
