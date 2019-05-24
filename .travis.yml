@@ -15,3 +15,16 @@ after_success:
     - docker push shibudas/complex-nginx
     - docker push shibudas/complex-server
     - docker push shibudas/complex-worker
+deploy:
+      provider: elasticbeanstalk
+      access_key_id: 
+            secure: "$AWS_ACCESS_KEY"
+      secret_access_key:
+            secure: "$AWS_SECRET_KEY"
+      region: "us-east-1"
+      app: "multi-docker-complex"
+      env: "MultiDockerComplex-env"
+      bucket_name: "elasticbeanstalk-us-east-1-177534457134" 
+      bucket_path: "multi-docker-complex" 
+      on:
+            branch: master
